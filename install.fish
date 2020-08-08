@@ -14,5 +14,6 @@ case "Remove*"
     echo "Already removed."
   else
     rm -v ~/.config/fish/conf.d/fzf-marks.plugin.fish
+    echo "fzf-marks file remains for future reference in ~/.local/share/fzf/fzf-marks"
   end
 end
