@@ -1,6 +1,6 @@
 # MIT License
 
-# Copyright (c) 2019 Marcel Patzwahl, Urbain Vaes
+# Copyright (c) 2019 Marcel Patzwahl, Urbain Vaes, Laurens Koning
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,16 @@
 
 command -v fzf > /dev/null 2>&1 or return
 
-if test -z "$FZF_MARKS_FILE"
-    set -g FZF_MARKS_FILE "$HOME/.fzf-marks"
+if test -z $FZF_MARKS_FILE
+    set -g FZF_MARKS_FILE ~/.local/share/fzf/fzf-marks
 end
 
-if test ! -f "$FZF_MARKS_FILE"
-    touch "$FZF_MARKS_FILE"
+if test ! -d ~/.local/share/fzf
+    mkdir -p ~/.local/share/fzf
+end
+
+if test ! -f $FZF_MARKS_FILE
+    touch $FZF_MARKS_FILE
 end
 
 if test -z "$FZF_MARKS_COMMAND"
